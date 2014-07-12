@@ -2,17 +2,47 @@
 
 class BaseController extends Controller {
 
+	private $viewBag;
+
 	/**
-	 * Setup the layout used by the controller.
+	 * Get information for page elements on every page
 	 *
 	 * @return void
 	 */
-	protected function setupLayout()
+	public function __construct()
 	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
+		$this->viewBag = array(
+	    	'pageClass'   => ''
+	    );
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Adds a class name to the pageClass key in the data object
+	|--------------------------------------------------------------------------
+	*/
+	protected function addPageClass( $class )
+	{
+		$this->viewBag['pageClass'] .= ' ' . $class;
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Creates a new key and value in the data object
+	|--------------------------------------------------------------------------
+	*/
+	protected function addViewProperty( $key, $value )
+	{
+		$this->viewBag[$key.""] = $value;
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Return this View, with location data if needed
+	|--------------------------------------------------------------------------
+	*/
+	protected function getView($view)
+	{
+		return View::make($view, $this->viewBag);
+	}
 }

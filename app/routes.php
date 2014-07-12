@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Repository bindings
+ */
+App::bind('PostRepositoryInterface', 'PostRepository');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

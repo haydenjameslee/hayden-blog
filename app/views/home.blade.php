@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hayden James Lee - Blog and Portfolio</title>
+    <title>Hayden Lee - Blog and Portfolio</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="styles/bootstrap.css" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index {{ $pageClass }}">
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -35,16 +35,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#blog">Hayden<strong>Lee</strong></a>
+                <a class="navbar-brand" href="/#about">Hayden<strong>Lee</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#portfolio">Projects</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/portfolio">Projects</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -54,11 +54,11 @@
         <div class="container"></div>
     </header>
 
-    <section id="blog">
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>BLog</h2>
+                    <h2>I Solve Problems</h2>
                     <!-- <hr class="star-light"> -->
                     <br>
                 </div>
@@ -69,6 +69,22 @@
                 </div>
                 <div class="col-lg-4">
                     <p>My life goal is to create something that people can't imagine living without.<br>If you'd like to get in touch contact me at <a class="insert-email" href="#"></a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2><a href="/blog/{{ $recentPost->slug }}">{{ $recentPost->title }}</a></h2>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p>{{ substr($recentPost->body, 0, 500) }} <a href="/blog/{{ $recentPost->slug }}"> Read more...</a></p>
                 </div>
             </div>
         </div>
@@ -93,27 +109,6 @@
             </div>
         </div>
     </section>
-
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>I Solve Problems</h2>
-                    <!-- <hr class="star-light"> -->
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>For the last three years I've been creating software solutions for startups and small businesses. Currently I'm building virtual reality products to solve real-world problems.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>My life goal is to create something that people can't imagine living without.<br>If you'd like to get in touch contact me at <a class="insert-email" href="#"></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <footer class="text-center">
         <div class="footer-above">
