@@ -8,7 +8,7 @@ class HomeController extends BaseController {
 	|--------------------------------------------------------------------------
 	*/
 
-	public function getHome()
+	public function home()
 	{
 		return View::make('home');
 	}
