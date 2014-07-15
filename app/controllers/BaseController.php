@@ -12,6 +12,7 @@ class BaseController extends Controller {
 	public function __construct()
 	{
 		$this->viewBag = array(
+			'title'		  => 'Hayden Lee - Blog and Portfolio',
 	    	'pageClass'   => ''
 	    );
 	}

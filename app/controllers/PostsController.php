@@ -7,6 +7,7 @@ class PostsController extends \BaseController {
     	parent::__construct();
 
 	    $this->post = $post;
+	    $this->addPageClass('blog');
   	}
 
 	/**
@@ -16,10 +17,38 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = $post::all();
+		$this->addPageClass('index');
 
-		return View::make('posts.index', compact('posts'));
+		$this->addViewProperty('posts', $this->post->recent(5));
+
+		return $this->getView('posts.index');
 	}
+
+	/**
+	 * Display the specified post.
+	 *
+	 * @param  string  $slug
+	 * @return Response
+	 */
+	public function show($slug)
+	{
+		$this->addPageClass('show');
+
+		$this->addViewProperty('post', $this->post->getBySlug($slug));
+
+		return $this->getView('posts.show');
+	}
+
+	/**
+	 * Display the posts in the specified range by date created.
+	 *
+	 * @return Response
+	 */
+	public function range()
+	{
+		return $this->post->range(intval(Input::get('lowLimit')), 5);
+	}
+
 
 	/**
 	 * Show the form for creating a new post
@@ -48,19 +77,6 @@ class PostsController extends \BaseController {
 		Post::create($data);
 
 		return Redirect::route('posts.index');
-	}
-
-	/**
-	 * Display the specified post.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$post = Post::findOrFail($id);
-
-		return View::make('posts.show', compact('post'));
 	}
 
 	/**

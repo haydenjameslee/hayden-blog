@@ -22,7 +22,7 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-        $this->addViewProperty('recentPost', $this->post->mostRecent());
+        $this->addViewProperty('recentPosts', $this->post->recent(3));
 
 		return $this->getView('home');
 	}

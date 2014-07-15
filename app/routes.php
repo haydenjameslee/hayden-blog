@@ -16,6 +16,10 @@ App::bind('PostRepositoryInterface', 'PostRepository');
 |
 */
 
+// Home
 Route::get('/', 'HomeController@home');
 
-Route::get('/admin', 'AdminController@index');
+// Blog
+Route::get('/blog', 'PostsController@index');
+Route::get('/blog/posts', 'PostsController@range');
+Route::get('/{slug}', 'PostsController@show');

@@ -1,30 +1,6 @@
-<html lang="en"><head>
+@extends('master')
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Hayden Lee - Blog and Portfolio</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="styles/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="styles/main.css" rel="stylesheet" type="text/css">
-
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!--<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">-->
-
-    <!-- IE8 support for HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body id="page-top" class="index {{ $pageClass }}">
-
+@section('content')
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -78,13 +54,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><a href="/blog/{{ $recentPost->slug }}">{{ $recentPost->title }}</a></h2>
+                    <h2><a href="/blog">Recent Posts</a></h2>
                     <br>
                 </div>
             </div>
+            <br>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p>{{ substr($recentPost->body, 0, 500) }} <a href="/blog/{{ $recentPost->slug }}"> Read more...</a></p>
+                <div class="col-lg-6 col-lg-offset-3">
+                    @foreach ($recentPosts as $post)
+                        <p class="post-title"><a href="/{{ $post->slug }}">{{ $post->title }} </a></p>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <br><br>
+                    <a href="/blog" class="btn btn-lg btn-outline">
+                        <!-- <i class="fa fa-list"></i> --> View All Posts
+                    </a>
                 </div>
             </div>
         </div>
@@ -100,11 +87,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>For the last three years I've been creating software solutions for startups and small businesses. Currently I'm building virtual reality products to solve real-world problems.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>My life goal is to create something that people can't imagine living without.<br>If you'd like to get in touch contact me at <a class="insert-email" href="#"></a></p>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <br><br>
+                    <a href="/portfolio" class="btn btn-lg btn-outline">
+                        <!-- <i class="fa fa-list"></i> --> View All Projects
+                    </a>
                 </div>
             </div>
         </div>
@@ -115,27 +105,27 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
+                        <h3>Featured On</h3>
                         <p>3481 Melrose Place
                             <br>Beverly Hills, CA 90210</p>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
+                    <div class="footer-col col-md-4 social-media-container">
+                        <h3>Social Medias</h3>
                         <ul class="list-inline">
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            <li><a href="http://www.facebook.com/hayden337" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            <li><a href="http://plus.google.com/115827124178955569056" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            <li><a href="https://twitter.com/haydenjameslee" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <li><a href="http://www.linkedin.com/in/haydenjameslee/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
+                            <!-- <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About Freelance</h3>
+                        <h3>What I'm Reading</h3>
                         <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                     </div>
                 </div>
@@ -157,14 +147,17 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
+@stop
 
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+
+
+
+
+@section('scripts')
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-    <script src="js/skrollr.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+    <script src="/js/skrollr.js"></script>
     <script src="/js/skrollr.menu.min.js"></script>
-    <script src="js/main.js"></script>
-
-</body></html>
+    <script src="/js/main.js"></script>
+@stop
