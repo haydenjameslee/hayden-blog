@@ -2,15 +2,21 @@
 
 class HomeController extends BaseController {
 
+    private $post;
+    private $project;
 
     /**
      * Instantiate a new AboutUsController instance.
      */
-    public function __construct(PostRepositoryInterface $post)
+    public function __construct(
+        PostRepositoryInterface $post,
+        ProjectRepositoryInterface $project
+    )
     {
         parent::__construct();
 
         $this->post = $post;
+        $this->project = $project;
         $this->addPageClass('home');
     }
 
@@ -23,6 +29,7 @@ class HomeController extends BaseController {
 	public function home()
 	{
         $this->addViewProperty('recentPosts', $this->post->recent(3));
+        $this->addViewProperty('recentProjects', $this->project->recent(3));
 
 		return $this->getView('home');
 	}

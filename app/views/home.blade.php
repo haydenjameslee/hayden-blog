@@ -35,7 +35,6 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>I Solve Problems</h2>
-                    <!-- <hr class="star-light"> -->
                     <br>
                 </div>
             </div>
@@ -70,7 +69,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <br><br>
                     <a href="/blog" class="btn btn-lg btn-outline">
-                        <!-- <i class="fa fa-list"></i> --> View All Posts
+                        View All Posts
                     </a>
                 </div>
             </div>
@@ -82,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Projects</h2>
-                    <!-- <hr class="star-light"> -->
+                    <br>
                     <br>
                 </div>
             </div>
@@ -90,10 +89,19 @@
 
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <br><br>
+                @foreach ($recentProjects as $project)
+                    <div class="col-sm-4">
+                        <img src="{{ $project->mediaUrl }}" class="project-media" />
+                        <h3>{{ $project->title }}</h3>
+                        <p>{{ $project->description }}</p>
+                        <a href="/{{ $project->url }}">View Project</a>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
                     <a href="/portfolio" class="btn btn-lg btn-outline">
-                        <!-- <i class="fa fa-list"></i> --> View All Projects
+                        View All Projects
                     </a>
                 </div>
             </div>
@@ -120,8 +128,6 @@
                             </li>
                             <li><a href="http://www.linkedin.com/in/haydenjameslee/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
-                            <!-- <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
@@ -148,10 +154,6 @@
         </a>
     </div>
 @stop
-
-
-
-
 
 @section('scripts')
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

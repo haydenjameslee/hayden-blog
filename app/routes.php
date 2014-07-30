@@ -4,6 +4,7 @@
  * Repository bindings
  */
 App::bind('PostRepositoryInterface', 'PostRepository');
+App::bind('ProjectRepositoryInterface', 'ProjectRepository');
 
 /*
 |--------------------------------------------------------------------------

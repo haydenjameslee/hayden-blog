@@ -20,5 +20,4 @@ class PostsTableSeeder extends Seeder {
 			));
 		}
 	}
-
 }
