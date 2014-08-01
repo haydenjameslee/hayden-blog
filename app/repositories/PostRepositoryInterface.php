@@ -2,6 +2,8 @@
 
 interface PostRepositoryInterface {
 
+    public function find($id);
+
     public function all();
 
     public function getBySlug($slug);

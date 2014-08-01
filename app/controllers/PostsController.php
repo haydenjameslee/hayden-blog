@@ -127,4 +127,12 @@ class PostsController extends \BaseController {
 		return Redirect::route('posts.index');
 	}
 
+	/**
+	 * ISP post from old blog
+	 */
+	public function IspPost()
+	{
+		return $this->show('evidence-my-isp-may-be-making-money-from-tracking-its-customers');
+	}
+
 }

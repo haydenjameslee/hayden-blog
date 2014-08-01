@@ -92,7 +92,7 @@
                 @foreach ($recentProjects as $project)
                     <div class="col-sm-4">
                         <img src="{{ $project->mediaUrl }}" class="project-media" />
-                        <h3>{{ $project->title }}</h3>
+                        <h3><a href="{{ $project->slug }}">{{ $project->title }}</a></h3>
                         <p>{{ $project->description }}</p>
                         <a href="/{{ $project->url }}">View Project</a>
                     </div>
@@ -132,7 +132,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>What I'm Reading</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

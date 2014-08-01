@@ -2,6 +2,11 @@
 
 class PostRepository implements PostRepositoryInterface {
 
+    public function find($id)
+    {
+        return Post::find($id);
+    }
+
     public function all()
     {
         return Post::orderBy('created_at', 'DESC')->get();

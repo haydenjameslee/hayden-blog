@@ -3,7 +3,7 @@
 @section('innerContent')
     <div class="container">
         <div class="row">
-            <div class="posts-container col-sm-6 col-sm-offset-3">
+            <div class="posts-container col-sm-8 col-sm-offset-2">
                 @foreach ($posts as $post)
                     <div class="post">
                         <h3><a href="/{{ $post->slug }}">{{ $post->title }}</a></h3>

@@ -17,6 +17,9 @@ App::bind('ProjectRepositoryInterface', 'ProjectRepository');
 |
 */
 
+// Posts from old blog
+Route::get('/evidence-my-isp-may-be-making-money-from-tracking-its-customers/', 'PostsController@IspPost');
+
 // Home
 Route::get('/', 'HomeController@home');
 
