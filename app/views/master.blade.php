@@ -2,7 +2,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
+    <meta name="description" content="{{ $description }}">
     <meta name="author" content="Hayden Lee">
 
     <title>{{ $title }}</title>

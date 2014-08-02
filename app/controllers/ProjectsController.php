@@ -27,6 +27,7 @@ class ProjectsController extends \BaseController {
 		$this->addPageClass('index');
 
 		$this->addViewProperty('projects', $this->project->recent(5));
+		$this->addViewMeta('Hayden Lee\'s Projects', 'Hayden Lee\'s developer projects');
 
 		return $this->getView('projects.index');
 	}
@@ -41,7 +42,10 @@ class ProjectsController extends \BaseController {
 	{
 		$this->addPageClass('show');
 
-		$this->addViewProperty('project', $this->project->getBySlug($slug));
+		$project = $this->project->getBySlug($slug);
+
+		$this->addViewProperty('project', $project);
+		$this->addViewMeta('Hayden Lee - Projects - ' . $project->title, $project->tagline);
 
 		return $this->getView('projects.show');
 	}

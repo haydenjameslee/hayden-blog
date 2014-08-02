@@ -12,7 +12,8 @@ class BaseController extends Controller {
 	public function __construct()
 	{
 		$this->viewBag = array(
-			'title'		  => 'Hayden Lee - Blog and Portfolio',
+			'title'		  => 'Hayden Lee - Blog and Developer Projects',
+			'description' => 'Hayden Lee\'s personal website, blog, and developer projects',
 	    	'pageClass'   => ''
 	    );
 	}
@@ -35,6 +36,17 @@ class BaseController extends Controller {
 	protected function addViewProperty( $key, $value )
 	{
 		$this->viewBag[$key.""] = $value;
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Adds the meta data to the view bag
+	|--------------------------------------------------------------------------
+	*/
+	protected function addViewMeta( $title, $description )
+	{
+		$this->viewBag['title'] = $title;
+		$this->viewBag['description'] = $description;
 	}
 
 	/*

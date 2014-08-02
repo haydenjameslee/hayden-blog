@@ -20,6 +20,7 @@ class PostsController extends \BaseController {
 		$this->addPageClass('index');
 
 		$this->addViewProperty('posts', $this->post->recent(5));
+		$this->addViewMeta('Hayden Lee\'s Blog', 'Hayden Lee\'s blog posts covering thoughts on entrepreneurship, coding, and new projects');
 
 		return $this->getView('posts.index');
 	}
@@ -34,7 +35,10 @@ class PostsController extends \BaseController {
 	{
 		$this->addPageClass('show');
 
-		$this->addViewProperty('post', $this->post->getBySlug($slug));
+		$post = $this->post->getBySlug($slug);
+
+		$this->addViewProperty('post', $post);
+		$this->addViewMeta('Hayden Lee - Blog - ' . $post->title, $post->title);
 
 		return $this->getView('posts.show');
 	}

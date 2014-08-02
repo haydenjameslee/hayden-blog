@@ -8,10 +8,12 @@
 
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="{{ $project->mediaUrl == '' ? '/img/default.png' : $project->mediaUrl }}" class="project-media" />
+                            <a title="{{ $project->title }}" href="{{ $project->url }}">
+                                <img src="{{ $project->mediaUrl == '' ? '/img/default.png' : $project->mediaUrl }}" class="project-media" />
+                            </a>
                         </div>
                         <div class="col-sm-8">
-                            <h1 class=""><a href="/projects/{{ $project->slug }}">{{ $project->title }}</a></h1>
+                            <h1 class=""><a href="{{ $project->url }}">{{ $project->title }}</a></h1>
                             <p class="date">{{ (new Date($project->created_at))->ago(); }}</p>
                             <div class="project-body">{{ $project->description }}</div>
                             <p><a class="btn btn-primary" title="{{ $project->title }}" href="{{ $project->url }}">View Project</a></p>
@@ -23,14 +25,13 @@
                         </div>
                     </div>
 
-
                     <hr>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 action-buttons">
-                <a href="/blog" class="btn btn-default">Back To All projects</a>
+                <a href="/projects" class="btn btn-default">Back To All Projects</a>
             </div>
         </div>
     </div>

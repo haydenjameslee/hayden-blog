@@ -91,7 +91,9 @@
             <div class="row">
                 @foreach ($recentProjects as $project)
                     <div class="col-sm-4">
-                        <img src="{{ $project->mediaUrl == '' ? '/img/default.png' : $project->mediaUrl }}" class="project-media" />
+                        <a href="/projects/{{ $project->slug }}" class="project-img-container">
+                            <img src="{{ $project->mediaUrl == '' ? '/img/default.png' : $project->mediaUrl }}" class="project-media" />
+                        </a>
                         <h3><a href="/projects/{{ $project->slug }}">{{ $project->title }}</a></h3>
                         <p>{{ $project->tagline }}</p>
                         <a href="/projects/{{ $project->slug }}">View Project</a>
@@ -113,6 +115,10 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
+                <div class="reading footer-col col-md-4">
+                        <h3>What I'm Reading</h3>
+                        <p><a title="the new digital age" href="http://www.amazon.com/The-New-Digital-Age-Reshaping/dp/0307957136">The New Digital Age<br><i>~Schmidt & Cohen</i></a></p>
+                    </div>
                     <div class="featured footer-col col-md-4">
                         <h3>Featured On</h3>
                         <p>
@@ -122,21 +128,8 @@
                         </p>
                     </div>
                     <div class="footer-col col-md-4 social-media-container">
-                        <h3>Social Media</h3>
-                        <ul class="list-inline">
-                            <li><a href="http://www.facebook.com/hayden337" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li><a href="http://plus.google.com/115827124178955569056" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li><a href="https://twitter.com/haydenjameslee" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li><a href="http://www.linkedin.com/in/haydenjameslee/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reading footer-col col-md-4">
-                        <h3>What I'm Reading</h3>
-                        <p><a title="the new digital age" href="http://www.amazon.com/The-New-Digital-Age-Reshaping/dp/0307957136">The New Digital Age<br>- Schmidt & Cohen</a></p>
+                        <h3><a title="hayden lee twitter" href="https://twitter.com/haydenjameslee" style="color:white;">Stay in touch</a></h3>
+                        <a href="https://twitter.com/haydenjameslee" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
