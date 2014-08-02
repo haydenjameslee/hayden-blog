@@ -134,5 +134,4 @@ class PostsController extends \BaseController {
 	{
 		return $this->show('evidence-my-isp-may-be-making-money-from-tracking-its-customers');
 	}
-
 }

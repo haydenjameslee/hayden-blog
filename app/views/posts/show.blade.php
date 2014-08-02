@@ -3,19 +3,22 @@
 @section('innerContent')
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-8 col-sm-offset-2">
                 <div class="post">
-                    <h3 class=""><a href="/{{ $post->slug }}">{{ $post->title }}</a></h3>
+                    <h1 class=""><a href="/{{ $post->slug }}">{{ $post->title }}</a></h1>
                     <p class="date">{{ (new Date($post->created_at))->ago(); }}</p>
-                    <p>{{ $post->body }}</p>
-                    <a href="http://twitter.com/home?status=http://hayden.io/blog/{{ $post->slug }} @haydenjameslee">Leave a comment</a>
-                    // <a href="http://twitter.com/search?q=hayden.io/{{ $post->slug }}">View comments</a>
+                    <div class="post-body">{{ $post->body }}</div>
+                    <div class="comments">
+                        <a href="http://twitter.com/home?status=http://hayden.io/blog/{{ $post->slug }} @haydenjameslee">Leave a comment</a>
+                        // <a href="http://twitter.com/search?q=hayden.io/{{ $post->slug }}">View comments</a>
+                        // <span class="date">{{ (new Date($post->created_at))->format('Y-m-d'); }}</span>
+                    </div>
                     <hr>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 action-buttons">
+            <div class="col-sm-8 col-sm-offset-2 action-buttons">
                 <a href="/blog" class="btn btn-default">Back To All Posts</a>
             </div>
         </div>

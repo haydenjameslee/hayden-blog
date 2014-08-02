@@ -6,7 +6,7 @@ class HomeController extends BaseController {
     private $project;
 
     /**
-     * Instantiate a new AboutUsController instance.
+     * Instantiate a new HomeController instance.
      */
     public function __construct(
         PostRepositoryInterface $post,

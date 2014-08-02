@@ -8,16 +8,13 @@
                     <div class="post">
                         <h3><a href="/{{ $post->slug }}">{{ $post->title }}</a></h3>
                         <p class="date">{{ (new Date($post->created_at))->ago(); }}</p>
-                        <p>{{ $post->body }}</p>
-                        <a href="http://twitter.com/home?status=http://hayden.io/blog/{{ $post->slug }} @haydenjameslee">Leave a comment</a>
-                        // <a href="http://twitter.com/search?q=hayden.io/{{ $post->slug }}">View comments</a>
                         <hr>
                     </div>
                 @endforeach
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 action-buttons">
+            <div class="col-sm-8 col-sm-offset-2 action-buttons">
                 <button class="more-posts btn" data-post-count="{{ count($posts); }}" type="button">Next Posts</button>
             </div>
         </div>

@@ -26,4 +26,12 @@ Route::get('/', 'HomeController@home');
 // Blog
 Route::get('/blog', 'PostsController@index');
 Route::get('/blog/posts', 'PostsController@range');
+
+// Projects
+Route::get('/projects', 'ProjectsController@index');
+Route::get('/projects/range', 'ProjectsController@range');
+Route::get('/projects/{slug}', 'ProjectsController@show');
+
+
+// Blog Posts
 Route::get('/{slug}', 'PostsController@show');

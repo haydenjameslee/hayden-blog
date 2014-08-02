@@ -12,15 +12,17 @@
 
 $(document).ready(function () {
     insertEmail();
-
     bindEvents();
 });
 
 
 var bindEvents = function () {
 
-    // Load more posts on blog list
+    // Load more post on blog index
     $('body.blog .more-posts').on('click', loadMorePosts);
+
+    // Load more projects on project index
+    $('body.projects .more-projects').on('click', loadMoreProjects);
 };
 
 var insertEmail = function () {
@@ -59,14 +61,46 @@ var loadMorePosts = function () {
     });
 };
 
+var loadMoreProjects = function () {
+
+    var moreButton = $(this);
+    var currentProjects = parseInt(moreButton.attr('data-project-count')); // Current number of posts displayed
+
+    var getData = {
+        lowLimit  : currentProjects
+    };
+
+    $.get('/projects/range', getData, function (data) {
+
+        var projects = data;
+        var projectsCont = $('.projects-container');
+
+        for (var i = 0; i < projects.length; i++) {
+            projectsCont.append(projectTemplate(projects[i]));
+        }
+
+        if (projects.length == 0) {
+            moreButton.removeClass('more-projects');
+            moreButton.text('No more projects');
+            moreButton.attr('disabled', 'disabled');
+        }
+
+        moreButton.attr('data-project-count', getData.lowLimit + projects.length);
+    });
+};
+
 var postTemplate = function (post) {
     return $('<div>').addClass('post').append(
-        $('<h3>').append($('<a>').attr('href', '/blog/'+post.slug).text(post.title)),
+        $('<h3>').append($('<a>').attr('href', '/'+post.slug).text(post.title)),
         $('<p>').addClass('date').text(jQuery.timeago(post.created_at)),
-        $('<p>').text(post.body),
-        $('<a>').attr('href','http://twitter.com/home?status=http://hayden.io/blog/'+post.slug+' @haydenjameslee').text('Leave a comment'),
-        ' // ',
-        $('<a>').attr('href', 'http://twitter.com/search?q=hayden.io/'+post.slug).text('View comments'),
+        $('<hr>')
+    );
+};
+
+var projectTemplate = function (project) {
+    return $('<div>').addClass('project').append(
+        $('<h3>').append($('<a>').attr('href', '/'+project.slug).text(project.title)),
+        $('<p>').addClass('date').text(jQuery.timeago(project.created_at)),
         $('<hr>')
     );
 };

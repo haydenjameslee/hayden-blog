@@ -19,8 +19,8 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/#about">About</a></li>
-                    <li class="active"><a href="/blog">Blog</a></li>
-                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li class="active"><a href="/projects">Projects</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

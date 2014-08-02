@@ -33,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family:Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:700;
 }
+h2, h3 {
+  font-weight: 300;
+}
 .img-centered {
   margin:0 auto;
 }
@@ -111,9 +114,6 @@ header {
       padding:10px 15px;
       font-size:17px;
       letter-spacing:2px;
-      -webkit-transition:all .2s;
-      -moz-transition:all .2s;
-      transition:all .2s;
     }
   }
 }
@@ -129,8 +129,8 @@ header {
   }
   .navbar-nav {
     > li > a:hover, > li > a:focus, > .active > a:hover, > .active > a:focus {
-      background-color:transparent;
-      color:@red;
+      background-color: white;
+      color: #000;
     }
     > .active > a {
       background-color:transparent;
@@ -166,17 +166,57 @@ header {
   }
 }
 
-#header {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1920px;
-  position: relative;
+.child-page-navbar.navbar-default {
+  background-color: #fff;
+  border-radius: 0;
 
-  .container {
-    background: url(/img/haydenlee-black3.png) 50% 0 no-repeat fixed;
-    min-height: 100%;
-    background-size: 85%;
-    background-origin: content-box;
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    margin-left: -15px;
+    font-size: 20px;
+    padding: 10px;
+    transition: all 0.3s;
+    color: #000;
+    font-weight: 300;
+    width: 180px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+
+    strong {
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  .navbar-right {
+    display:inherit;
+
+    > li > a {
+      color: #000;
+      font-weight: 300;
+      -webkit-transition: none;
+      -moz-transition: none;
+      transition: none;
+
+      &:hover {
+        color: #fff;
+        background-color: #000;
+      }
+    }
+
+    > li.active a {
+      color: #fff;
+      background-color: #000;
+    }
   }
 }
 
@@ -185,6 +225,20 @@ header {
 ---------------------------------------------------------------------------*/
 
 body.home {
+
+  #header {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+
+    .container {
+      background: url(/img/haydenlee-black3.png) 50% 0 no-repeat fixed;
+      min-height: 100%;
+      background-size: 85%;
+      background-origin: content-box;
+    }
+  }
 
   section {
     padding: 150px 0;
@@ -214,11 +268,11 @@ body.home {
       }
     }
 
-    &#portfolio {
+    &#projects {
       color: #fff;
       background: @red; //#A73737;
 
-      h3 > a {
+      a {
         color: #fff;
       }
 
@@ -251,6 +305,55 @@ body.home {
 }
 
 /*--------------------------------------------------------------------------
+| Posts and Project Items
+---------------------------------------------------------------------------*/
+
+.post, .project {
+  margin-bottom: 50px;
+
+  &:first-child {
+    margin-top: 50px;
+  }
+
+  h1 a {
+    color: #000000;
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+  h3 a {
+    color: black;
+  }
+
+  .post-body {
+    a {
+      color: #1d98c6;
+    }
+  }
+
+  .project-body {
+    margin-top: 10px;
+  }
+
+  .project-media {
+    width: 100%;
+  }
+
+  .comments {
+    margin-top: 40px;
+  }
+
+  .date {
+    color: grey;
+    margin: 0;
+  }
+
+  p {
+    margin: 20px 0 30px;
+  }
+}
+
+/*--------------------------------------------------------------------------
 | Blog
 ---------------------------------------------------------------------------*/
 
@@ -258,57 +361,21 @@ body.blog {
 
   background-color: #fff;
 
-  .navbar-default {
-    background-color: #fff;
-    border-radius: 0;
-
-    .navbar-header {
-      float: left;
-    }
-
-    .navbar-brand {
-      margin: 0;
-      margin-left: -15px;
-      font-size: 20px;
-      padding: 10px;
-      transition: all 0.3s;
-      color: #000;
-      font-weight: 300;
-      width: 180px;
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-
-      strong {
-        font-weight: 500;
-      }
-
-      &:hover {
-        color: #fff;
-        background-color: #000;
-      }
-    }
-
-    .navbar-right {
-      display:inherit;
-
-      > li > a {
-        color: #000;
-        font-weight: 300;
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none;
-
-        &:hover {
-          color: #fff;
-          background-color: #000;
-        }
-      }
-    }
-  }
-
-  .post {
+  .action-buttons {
     margin-bottom: 100px;
+  }
+}
+
+/*--------------------------------------------------------------------------
+| Projects
+---------------------------------------------------------------------------*/
+
+body.projects {
+
+  background-color: #fff;
+
+  .project {
+    margin-bottom: 50px;
 
     &:first-child {
       margin-top: 50px;
@@ -316,15 +383,6 @@ body.blog {
 
     h3 a {
       color: black;
-    }
-
-    .date {
-      color: grey;
-      margin: 0;
-    }
-
-    p {
-      margin: 20px 0 30px;
     }
   }
 
@@ -352,6 +410,18 @@ footer {
   .footer-below {
     padding:25px 0;
     background-color: #1D1D1D;
+  }
+
+  .featured {
+    img {
+      width: 30%;
+      height: 90px;
+      padding: 0 5px;
+    }
+  }
+
+  .reading a {
+    color: white;
   }
 }
 

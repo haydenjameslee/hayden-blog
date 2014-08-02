@@ -2,6 +2,21 @@
 
 class ProjectsController extends \BaseController {
 
+    private $project;
+
+    /**
+     * Instantiate a new ProjectsController instance.
+     */
+    public function __construct(
+        ProjectRepositoryInterface $project
+    )
+    {
+        parent::__construct();
+
+        $this->project = $project;
+        $this->addPageClass('projects');
+    }
+
 	/**
 	 * Display a listing of projects
 	 *
@@ -9,12 +24,39 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$projects = Project::all();
+		$this->addPageClass('index');
 
-		return View::make('projects.index', compact('projects'));
+		$this->addViewProperty('projects', $this->project->recent(5));
+
+		return $this->getView('projects.index');
 	}
 
 	/**
+	 * Display the specified project.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($slug)
+	{
+		$this->addPageClass('show');
+
+		$this->addViewProperty('project', $this->project->getBySlug($slug));
+
+		return $this->getView('projects.show');
+	}
+
+	/**
+	 * Display the projects in the specified range by date created.
+	 *
+	 * @return Response
+	 */
+	public function range()
+	{
+		return $this->project->range(intval(Input::get('lowLimit')), 5);
+	}
+
+		/**
 	 * Show the form for creating a new project
 	 *
 	 * @return Response
@@ -41,19 +83,6 @@ class ProjectsController extends \BaseController {
 		Project::create($data);
 
 		return Redirect::route('projects.index');
-	}
-
-	/**
-	 * Display the specified project.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$project = Project::findOrFail($id);
-
-		return View::make('projects.show', compact('project'));
 	}
 
 	/**

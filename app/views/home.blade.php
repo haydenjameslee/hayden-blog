@@ -20,7 +20,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/#about">About</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/portfolio">Projects</a></li>
+                    <li><a href="/projects">Projects</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -59,7 +59,7 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-lg-6 col-lg-offset-3">
+                <div class="col-lg-10 col-lg-offset-1">
                     @foreach ($recentPosts as $post)
                         <p class="post-title"><a href="/{{ $post->slug }}">{{ $post->title }} </a></p>
                     @endforeach
@@ -76,11 +76,11 @@
         </div>
     </section>
 
-    <section id="portfolio">
+    <section id="projects">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Projects</h2>
+                    <h2><a href="/projects">Recent Projects</a></h2>
                     <br>
                     <br>
                 </div>
@@ -91,16 +91,17 @@
             <div class="row">
                 @foreach ($recentProjects as $project)
                     <div class="col-sm-4">
-                        <img src="{{ $project->mediaUrl }}" class="project-media" />
-                        <h3><a href="{{ $project->slug }}">{{ $project->title }}</a></h3>
-                        <p>{{ $project->description }}</p>
-                        <a href="/{{ $project->url }}">View Project</a>
+                        <img src="{{ $project->mediaUrl == '' ? '/img/default.png' : $project->mediaUrl }}" class="project-media" />
+                        <h3><a href="/projects/{{ $project->slug }}">{{ $project->title }}</a></h3>
+                        <p>{{ $project->tagline }}</p>
+                        <a href="/projects/{{ $project->slug }}">View Project</a>
                     </div>
                 @endforeach
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <a href="/portfolio" class="btn btn-lg btn-outline">
+                    <br><br>
+                    <a href="/projects" class="btn btn-lg btn-outline">
                         View All Projects
                     </a>
                 </div>
@@ -112,13 +113,16 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="featured footer-col col-md-4">
                         <h3>Featured On</h3>
-                        <p>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210</p>
+                        <p>
+                            <a title="hayden lee yo hackathon" href="http://techcrunch.com/2014/06/28/yo-hackathon-attempts-to-show-how-yo-can-grow/"><img alt="techcrunch logo" src="/img/tc-logo.jpg" /></a>
+                            <a title="hayden lee udacity" href="http://blog.udacity.com/2013/01/udacity-student-success-story-hayden-lee.html"><img alt="udacity logo" src="/img/udacity-logo.png" /></a>
+                            <a title="hayden lee roanoke times" href="http://www.roanoke.com/news/local/blacksburg/top-colleges-free-on-the-web/article_fb302277-f096-5803-b4fd-e566c4bb8255.html?mode=story"><img alt="roanoke times logo" src="/img/RoanokeTimes.png" /></a>
+                        </p>
                     </div>
                     <div class="footer-col col-md-4 social-media-container">
-                        <h3>Social Medias</h3>
+                        <h3>Social Media</h3>
                         <ul class="list-inline">
                             <li><a href="http://www.facebook.com/hayden337" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
@@ -130,9 +134,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="reading footer-col col-md-4">
                         <h3>What I'm Reading</h3>
-                        <p></p>
+                        <p><a title="the new digital age" href="http://www.amazon.com/The-New-Digital-Age-Reshaping/dp/0307957136">The New Digital Age<br>- Schmidt & Cohen</a></p>
                     </div>
                 </div>
             </div>
