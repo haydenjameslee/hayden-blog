@@ -1,5 +1,43 @@
 <html lang="en"><head>
 
+    <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+    <html itemscope itemtype="http://schema.org/Article">
+
+    <!-- Place this data between the <head> tags of your website -->
+    <title>Page Title. Maximum length 60-70 characters</title>
+    <meta name="description" content="Page description. No longer than 155 characters." />
+
+    <!-- Google Authorship and Publisher Markup -->
+    <link rel="author" href="https://plus.google.com/+HaydenLee337/posts"/>
+    <link rel="publisher" href="https://plus.google.com/+HaydenLee337"/>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ $title }}">
+    <meta itemprop="description" content="{{ $description }}">
+    <meta itemprop="image" content="http://haydenlee.io/img/haydenlee-black3.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@haydenjameslee">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:creator" content="@haydenjameslee">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="http://haydenlee.io/img/haydenlee-black3.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:image" content="http://haydenlee.io/img/haydenlee-black3.png" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:site_name" content="Hayden Lee" />
+    <meta property="article:published_time" content="{{ $created_at }}" />
+    <meta property="article:modified_time" content="{{ $updated_at }}" />
+    <meta property="article:section" content="Blog" />
+    <meta property="article:tag" content="coding, startups" />
+    <meta property="article:author" content="https://www.facebook.com/hayden337" />
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="{{ $description }}">

@@ -14,7 +14,10 @@ class BaseController extends Controller {
 		$this->viewBag = array(
 			'title'		  => 'Hayden Lee - Blog and Developer Projects',
 			'description' => 'Hayden Lee\'s personal website, blog, and developer projects',
-	    	'pageClass'   => ''
+	    	'url'		  => Request::url(),
+	    	'pageClass'   => '',
+	    	'created_at'  => '',
+	    	'updated_at'  => ''
 	    );
 	}
 

@@ -45,6 +45,8 @@ class ProjectsController extends \BaseController {
 		$project = $this->project->getBySlug($slug);
 
 		$this->addViewProperty('project', $project);
+		$this->addViewProperty('created_at', $project->created_at);
+		$this->addViewProperty('updated_at', $project->updated_at);
 		$this->addViewMeta('Hayden Lee - Projects - ' . $project->title, $project->tagline);
 
 		return $this->getView('projects.show');

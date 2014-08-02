@@ -38,6 +38,8 @@ class PostsController extends \BaseController {
 		$post = $this->post->getBySlug($slug);
 
 		$this->addViewProperty('post', $post);
+		$this->addViewProperty('created_at', $post->created_at);
+		$this->addViewProperty('updated_at', $post->updated_at);
 		$this->addViewMeta('Hayden Lee - Blog - ' . $post->title, $post->title);
 
 		return $this->getView('posts.show');
