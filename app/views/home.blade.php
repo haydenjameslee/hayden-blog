@@ -18,7 +18,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/#about">About</a></li>
+                    <li class="hidden-xs"><a href="/#about">About</a></li>
+                    <li class="visible-xs-block hidden-sm hidden-md hidden-lg" ><a href="/">About</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/projects">Projects</a></li>
                 </ul>
@@ -35,7 +36,6 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>I Solve Problems</h2>
-                    <br>
                 </div>
             </div>
             <div class="row">
@@ -54,10 +54,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2><a href="/blog">Recent Posts</a></h2>
-                    <br>
                 </div>
             </div>
-            <br>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     @foreach ($recentPosts as $post)
@@ -67,7 +65,6 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <br><br>
                     <a href="/blog" class="btn btn-lg btn-outline">
                         View All Posts
                     </a>
@@ -81,12 +78,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2><a href="/projects">Recent Projects</a></h2>
-                    <br>
-                    <br>
                 </div>
-            </div>
-            <div class="row">
-
             </div>
             <div class="row">
                 @foreach ($recentProjects as $project)
@@ -96,13 +88,12 @@
                         </a>
                         <h3><a href="/projects/{{ $project->slug }}">{{ $project->title }}</a></h3>
                         <p>{{ $project->tagline }}</p>
-                        <a href="/projects/{{ $project->slug }}">View Project</a>
+                        <a class="view-project" href="/projects/{{ $project->slug }}">View Project</a>
                     </div>
                 @endforeach
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <br><br>
                     <a href="/projects" class="btn btn-lg btn-outline">
                         View All Projects
                     </a>

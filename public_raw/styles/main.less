@@ -50,6 +50,10 @@ h2, h3 {
   color: #000;
   background:0 0;
   transition:all .2s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 }
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
   color: #fff;
@@ -103,6 +107,11 @@ header {
     strong {
       font-weight: 400;
     }
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+      margin-top: 0;
+    }
   }
   .navbar-header {
     float: none;
@@ -116,11 +125,23 @@ header {
       letter-spacing:2px;
     }
   }
+
+  @media (max-width: 768px) {
+    .navbar-collapse.in .navbar-right,
+    .navbar-collapse.collapsing .navbar-right
+    {
+      display: block;
+    }
+  }
 }
 
 .navbar-default, .navbar-inverse {
   border:0;
   background-color: @transparent;
+
+  @media (max-width: 768px) {
+    background-color: #000;
+  }
 }
 
 .navbar-default {
@@ -138,31 +159,33 @@ header {
     }
   }
 }
+@media (min-width: 769px) {
 
-.navbar-fixed-top.navbar-shrink {
+  .navbar-fixed-top.navbar-shrink {
 
-  background-color:rgba(0,0,0,0.8);
+    background-color:rgba(0,0,0,0.8);
 
-  .navbar-header {
-    float: left;
-  }
+    .navbar-header {
+      float: left;
+    }
 
-  .navbar-brand {
-    margin: 0;
-    margin-left: -15px;
-    font-size: 20px;
-    padding: 10px;
-    -webkit-transition:all .2s;
-    -moz-transition:all .2s;
-    transition: all 0.2s;
-  }
+    .navbar-brand {
+      margin: 0;
+      margin-left: -15px;
+      font-size: 20px;
+      padding: 10px;
+      -webkit-transition:all .2s;
+      -moz-transition:all .2s;
+      transition: all 0.2s;
+    }
 
-  .navbar-right {
-    display:inherit;
-  }
+    .navbar-right {
+      display:inherit;
+    }
 
-  .navbar-default .navbar-nav > .active > a {
-    color: @red;
+    .navbar-default .navbar-nav > .active > a {
+      color: @red;
+    }
   }
 }
 
@@ -172,6 +195,14 @@ header {
 
   .navbar-header {
     float: left;
+
+    @media (max-width: 768px) {
+      float: none;
+
+      .navbar-toggle .icon-bar {
+        background-color: #000;
+      }
+    }
   }
 
   .navbar-brand {
@@ -194,6 +225,11 @@ header {
     &:hover {
       color: #fff;
       background-color: #000;
+    }
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      margin-top:10px;
     }
   }
 
@@ -237,6 +273,10 @@ body.home {
       min-height: 100%;
       background-size: 85%;
       background-origin: content-box;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -246,9 +286,19 @@ body.home {
     width: 100%;
     min-height: 105%;
 
+    @media (max-width: 768px) {
+      padding: 75px 0;
+    }
+
     h2 {
       margin:0;
+      margin-bottom: 40px;
       font-size:3em;
+
+      @media (max-width: 768px) {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
     }
 
     p.post-title {
@@ -256,6 +306,10 @@ body.home {
       text-align: center;;
       a {
         color: black;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 22px;
       }
     }
 
@@ -283,6 +337,7 @@ body.home {
       .btn-outline {
         border: solid 2px #fff;
         color: #fff;
+        margin-top: 40px;
       }
       .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
         color: @red;
@@ -292,6 +347,15 @@ body.home {
       .project-img-container {
         display: block;
         min-height: 200px;
+
+        @media (max-width: 768px) {
+          margin-top: 50px;
+          min-height: 0;
+        }
+      }
+
+      .view-project {
+        font-size: 20px;
       }
     }
 
@@ -304,6 +368,10 @@ body.home {
 
       h2 a {
         color: #000;
+      }
+
+      .btn-outline {
+        margin-top: 40px;
       }
     }
   }
@@ -328,6 +396,10 @@ body.home {
 
   h3 a {
     color: black;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   .post-body {
@@ -355,6 +427,12 @@ body.home {
 
   p {
     margin: 20px 0 30px;
+  }
+
+  @media (max-width: 768px) {
+    iframe {
+      width: 100%;
+    }
   }
 }
 
@@ -442,6 +520,10 @@ footer {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 
   .fa {
     margin-top: 12px;
