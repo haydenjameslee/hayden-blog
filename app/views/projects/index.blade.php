@@ -6,7 +6,7 @@
             <div class="projects-container col-sm-8 col-sm-offset-2">
                 @foreach ($projects as $project)
                     <div class="project">
-                        <h3><a href="/project/{{ $project->slug }}">{{ $project->title }}</a></h3>
+                        <h3><a href="/projects/{{ $project->slug }}">{{ $project->title }}</a></h3>
                         <p class="date">{{ (new Date($project->created_at))->ago(); }}</p>
                         <hr>
                     </div>
