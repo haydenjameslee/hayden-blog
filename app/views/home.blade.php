@@ -108,7 +108,7 @@
                 <div class="row">
                 <div class="reading footer-col col-md-4">
                         <h3>What I'm Reading</h3>
-                        <p><a title="the new digital age" href="http://www.amazon.com/The-New-Digital-Age-Reshaping/dp/0307957136">The New Digital Age<br><i>~Schmidt & Cohen</i></a></p>
+                        <p><a title="ready player one" href="http://readyplayerone.com/">Ready Player One<br><i>~Ernest Cline</i></a></p>
                     </div>
                     <div class="featured footer-col col-md-4">
                         <h3>Featured On</h3>
