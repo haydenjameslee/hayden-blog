@@ -9,8 +9,8 @@
                     <p class="date">{{ (new Date($post->created_at))->ago(); }}</p>
                     <div class="post-body">{{ $post->body }}</div>
                     <div class="comments">
-                        <a href="http://twitter.com/home?status=http://hayden.io/blog/{{ $post->slug }} @haydenjameslee">Leave a comment</a>
-                        // <a href="http://twitter.com/search?q=hayden.io/{{ $post->slug }}">View comments</a>
+                        <a href="http://twitter.com/home?status=http://hayden.io/{{ $post->slug }} @haydenjameslee">Leave a comment</a>
+                        // <a href="http://twitter.com/search?f=realtime&q=hayden.io">View comments</a>
                         // <span class="date">{{ (new Date($post->created_at))->format('Y-m-d'); }}</span>
                     </div>
                     <hr>
