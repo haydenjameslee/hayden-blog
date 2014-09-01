@@ -202,11 +202,8 @@ header {
   .navbar-brand {
     margin: 0;
     margin-left: -15px;
-    font-size: 20px;
     padding: 10px;
     transition: all 0.3s;
-    color: #000;
-    font-weight: 300;
     width: 180px;
     -webkit-transition: none;
     -moz-transition: none;
@@ -217,8 +214,7 @@ header {
     }
 
     &:hover {
-      color: #fff;
-      background-color: #000;
+      //background-color: #000;
     }
 
     @media (max-width: 768px) {
@@ -384,6 +380,10 @@ body.home {
 
   &:first-child {
     margin-top: 50px;
+
+    @media (max-width: 768px) {
+      margin-top: 0px;
+    }
   }
 
   h1 a {
@@ -427,6 +427,10 @@ body.home {
     margin: 20px 0 30px;
   }
 
+  .navbar-brand img {
+    width: 150px;
+  }
+
   @media (max-width: 768px) {
     iframe {
       width: 100%;
@@ -444,6 +448,10 @@ body.blog {
 
   .action-buttons {
     margin-bottom: 100px;
+  }
+
+  .navbar-brand img {
+    width: 150px;
   }
 }
 
@@ -469,6 +477,10 @@ body.projects {
 
   .action-buttons {
     margin-bottom: 100px;
+  }
+
+  .navbar-brand img {
+    width: 150px;
   }
 }
 
