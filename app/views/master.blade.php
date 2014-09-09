@@ -52,6 +52,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <script src="//widget.battleforthenet.com/widget.min.js" async></script>
 </head>
 <body class="{{ $pageClass }}">
 
