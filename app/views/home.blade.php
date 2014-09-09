@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#about"><img alt="hayden lee logo" src="/img/avatar-black-net-neutrality.gif"/></a>
+                <a class="navbar-brand" href="/#about"><img alt="hayden lee logo" src="/img/slow-down.gif"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
