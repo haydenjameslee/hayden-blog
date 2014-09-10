@@ -18,6 +18,7 @@ App::bind('ProjectRepositoryInterface', 'ProjectRepository');
 */
 
 // Posts from old blog
+Route::get('/my-isp-access-media-3-admitting-to-man-in-the-middle-attack', 'PostsController@IspPost2');
 Route::get('/evidence-my-isp-may-be-making-money-from-tracking-its-customers/', 'PostsController@IspPost');
 
 // Home

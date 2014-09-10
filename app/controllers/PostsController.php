@@ -140,4 +140,12 @@ class PostsController extends \BaseController {
 	{
 		return $this->show('evidence-my-isp-may-be-making-money-from-tracking-its-customers');
 	}
+
+	/**
+	 * ISP post from old blog
+	 */
+	public function IspPost2()
+	{
+		return $this->getView('posts.isp2');
+	}
 }
